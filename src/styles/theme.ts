@@ -4,9 +4,10 @@ dai se precisar mudar mudo em apenas um lugar (no casoaq) */
 const theme = {
   background: '#11172B',
   backgroundLight: '#1B2138',
-   primary: '#0EE7B7',
-
-   secondary: '#7AC7E3',
+  /*  primary: '#0EE7B7',
+   secondary: '#7AC7E3', */
+   primary: '#2af598',
+   secondary: '#009efd',
 
   gradient: 'linear-gradient(225deg, #313860 0%, #11172B 100%);',
   text: '#848DA0',
