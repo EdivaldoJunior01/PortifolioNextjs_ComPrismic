@@ -28,13 +28,13 @@ function HomeHero () {
            <span className="comment">//O que faço atualmente</span>
            <span className="roxo">Infos</span>  {'\u007B'}
            <div>
-             Cursando: <span>Sistemas da Depressão,</span>
+             Cursando: <span>Sistemas de Informação</span>
            </div>
            <div>
              Onde: <span>IFTO - Campus Paraíso do Tocantins</span>
            </div>
            <div>
-           Estagiário: <span>Badeco da ACIP- Paraíso</span>
+           Estagiário: <span>ACIP- Paraíso</span>
            </div>
            {'\u007B'}
          </CodeItem>
