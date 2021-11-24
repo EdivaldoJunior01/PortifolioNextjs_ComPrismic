@@ -33,13 +33,13 @@ export default function Projetos({projetos}: ProjetoProps){
       <main className="container">{/* essa classe e p/ herdar o estilo de container  */}
 
       {/* JEITO ABAIXO MANUALD DE FAZER SEM O PRISMIC */}
-        <ProjetoItem
+     {/*    <ProjetoItem
 
           title="teste123"
           type="website"
           slug="teste123"
           imgUrl="https://dt2sdf0db8zob.cloudfront.net/wp-content/uploads/2021/04/7-Best-Website-Templates-for-Musicians-and-Bands-358x188.jpg"
-        />
+        /> */}
       {projetos.map(projeto =>( //JEITO DIRETO COM O PRISMIC
           <ProjetoItem
           key={projeto.slug}
