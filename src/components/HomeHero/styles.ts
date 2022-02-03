@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import theme from '../../styles/theme';
 
 export const Container = styled.section` /* container que engloba todos */
   width: 100%;
@@ -8,7 +9,7 @@ export const Container = styled.section` /* container que engloba todos */
   justify-content: center;
   margin-top: 5rem;
 
-  >img{ /* imagen */
+  >img{ /* imagem */
     width: 48rem;
     flex: 1;
   }
@@ -116,6 +117,7 @@ export const CodeItem =styled.pre ` /* caixinha com as informações */
     margin-bottom: 1rem; /* pular a linha */
     display: block; /* faz o infos ir p/ baixo */
   }
+
 
 
 ` ;

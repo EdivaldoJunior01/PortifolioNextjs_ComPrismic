@@ -23,13 +23,10 @@ export const Container = styled.section`
     margin-top: 5rem;
     gap: 2rem;
   }
-
-
 }
 `;
 
 export const ItemContainer = styled.div`
-
   >div{
     background: ${({theme}) => theme.gradient};
     padding: 1rem;

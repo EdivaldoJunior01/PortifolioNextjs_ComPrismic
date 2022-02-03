@@ -1,5 +1,4 @@
-import { retail } from 'googleapis/build/src/apis/retail';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import toast from 'react-hot-toast';
 import { sendContactMail } from '../../services/sendMail';
 import theme from '../../styles/theme';
@@ -10,71 +9,66 @@ export default function Formulario() {
   const [email, setEmail] = useState('');
   const [mensagem, setMensagem] = useState('');
 
-  const [loading, setLoading] = useState(false)//p pessoa não flodar a requisição do formulario
+  const [loading, setLoading] = useState(false);
 
-  async function handleSubmit (e){
-    e.preventDefault(); //previne que a pag não atualize, na hora do envio do formulario
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault(); //previne que a pag seja recarregada quando enviar o form
+    if(loading) return;
 
-    if(!nome || !email || !mensagem){
-      toast("Preencha todos os campos para enviar sua mensagem!", {
-        style:{
+    if (!nome.trim() || !email.trim() || !mensagem.trim()) {
+      toast('Por favor preencha todos os campos para enviar sua mensagem!', {
+        style: {
           background: theme.error,
           color: '#fff'
         }
-      })
-      return; //se de erro a função ja para aqui
+      });
+      return;
     }
-
-    try{
-      setLoading(true)
-      await sendContactMail(nome, email, mensagem)
-       setNome('');
-       setEmail('');
-       setMensagem('');
-
-       toast("Mensagem enviada com sucesso!", {
-         style:{
-           background: theme.secondary,
-           color: '#fff'
-         }
-       })
-
-    }catch(error){
-      toast("Ocorreu um erro ao tentar enviar sua mensagem. Tente novamente!", {
-        style:{
+    try {
+      setLoading(true);
+      await sendContactMail(nome, email, mensagem);
+      setNome('');//limpar os campos após o envio
+      setEmail('');
+      setMensagem('');
+      toast('Mensagem enviada com sucesso!',{
+        style: {
+            background: theme.secondary,
+            color: '#fff'
+          }
+      });
+    } catch (err) {
+      toast('Ocorreu um erro ao tentar enviar sua mensagem. Tente novamente', {
+        style: {
           background: theme.error,
           color: '#fff'
         }
-      })
-    } finally{//executa depois da função ter sido exec.
-      setLoading(false);
+      });
+    }finally {//executa mesmo dando certo ou errado
+      setLoading(false)
     }
   }
+
+  //handleSubmit function que ira ser executado ao apertar o btn enviara
   return (
     <FormContainer data-aos="fade-up" onSubmit={handleSubmit}>
-      {/* aos animação importada no index principal */}
-
+      {/* animação fade-up */}
       <Input
         placeholder="Nome"
         value={nome}
         onChange={({ target }) => setNome(target.value)}
       />
-
       <Input
         placeholder="E-mail"
         type="email"
         value={email}
         onChange={({ target }) => setEmail(target.value)}
-
       />
       <TextArea
         placeholder="Mensagem"
         value={mensagem}
         onChange={({ target }) => setMensagem(target.value)}
-
       />
-      <button type="submit" disabled={loading} >ENVIAR</button>
+      <button type="submit" disabled={loading}>Enviar</button>
     </FormContainer>
   );
 }
-/* OBS TIREI O REQUIRED PARA USAR UMA BIBLI CHAMADA toast */

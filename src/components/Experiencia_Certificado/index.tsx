@@ -12,12 +12,12 @@ function ExperienciaCertificado() {
           title="Atendente e Suporte de TI"
           description="Contratado como estagiário, para auxiliar nas áreas spc, serasa, unimed e também suporte de TI."
         />
-        {/* item que fala sobre as experiencia no site, chamo ele aqui */}
-        <ItemExperiencia
+         <ItemExperiencia
           year="2015-2018"
           title="Atendente e Caixa"
           description="Atendente e caixa"
         />
+        {/* item que fala sobre as experiencia no site, chamo ele aqui */}
       </section>
     </Container>
   );
