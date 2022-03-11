@@ -31,7 +31,7 @@ function HomeHero () {
              Cursando: <span>Sistemas de Informação</span>
            </div>
            <div>
-             Onde: <span>IFTO - Campus Paraíso do Tocantins</span>
+             Onde: <span>IFTO - Campus Paraíso -TO</span>
            </div>
            <div>
            Estagiário: <span>ACIP- Paraíso</span>
